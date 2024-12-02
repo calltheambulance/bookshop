@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+</head>
+<body>
+<h1>Profile</h1>
+<div>
+    <p>Имя: <span th:text="${name}"></span></p>
+    <p>Фамилия: <span th:text="${surname}"></span></p>
+    <p>Email: <span th:text="${email}"></span></p>
+    <p>Номер телефона: <span th:text="${phone}"></span></p>
+</div>
+<form th:action="@{/logout}" method="post">
+    <input type="hidden" name="_csrf" th:value="${_csrf.token}" />
+    <button type="submit">Выйти</button>
+</form>
+<form th:action="@{/}" method="get">
+    <button type="submit">На главную</button>
+</form>
+</body>
+</html>

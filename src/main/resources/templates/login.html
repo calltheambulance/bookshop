@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:c="http://www.w3.org/1999/XSL/Transform">
+<head>
+    <meta charset="UTF-8">
+    <title>Вход</title>
+    <link rel="stylesheet" href="./styles/login.css"></link>
+</head>
+<body>
+<h1>Вход</h1>
+<form th:method="post" th:action="@{/login}" class="form">
+    <div>
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" required/>
+    </div>
+    <div>
+        <label for="password">Пароль</label>
+        <input type="password" id="password" name="password" required/>
+    </div>
+    <div>
+        <input type="submit" value="Войти"/>
+    </div>
+</form>
+<div th:if="${error}" style="color: red;">
+    <p th:text="${error}"></p>
+</div>
+<a href="/reg">У меня нет профиля</a>
+</body>
+</html>

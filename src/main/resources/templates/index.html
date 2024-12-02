@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <h1>Печатный рай</h1>
+    <h2>Интернет-магазин книг</h2>
+</head>
+<body>
+
+<div th:each="book : ${books}">
+    <a th:href="@{/{title}(title=${book.getTitle()})}"
+       th:text="${book.getTitle() + ' | ' + book.getAuthor()}"></a>
+
+</div>
+<a href="/login">Войти в аккаунт</a>
+<a href="/cart">Корзина</a>
+<a href="/reg">Зарегистрироваться</a>
+<a href="/profile">Профиль</a>
+</body>
+</html>

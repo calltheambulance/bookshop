@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <p>Название: <span th:text="${book.title}"></span></p>
+    <p>Автор: <span th:text="${book.author}"></span></p>
+    <p>Издатель <span th:text="${book.publisher}"></span></p>
+    <p>ISBN:  <span th:text="${book.isbn}"></span></p>
+    <p>Описание:  <span th:text="${book.about}"></span></p>
+    <p>Стоимость:  <span th:text="${book.price}"></span></p>
+
+</div>
+<div>
+    <form th:action="@{'/cart/add/' + ${book.id}}" th:method="post">
+        <button type="submit">Добавить в корзину</button>
+    </form>
+
+</div>
+<div>
+    <a href="/">Назад на главную</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Страница добавления книги</title>
+    <link rel="stylesheet" href="./styles/addBook.css"></link>
+
+</head>
+<body>
+<form th:action="@{/addBook}" th:object="${bookDto}" th:method="post" class="form">
+    <label for="title">Название</label>
+    <input type="text" id="title" th:field="*{title}" class="form">
+
+    <label for="publisher">Издатель</label>
+    <input type="text" id="publisher" th:field="*{publisher}" class="form">
+    <label for="isbn">ISBN</label>
+    <input type="text" id="isbn" th:field="*{isbn}" class="form">
+
+    <label for="author">Автор</label>
+    <input type="text" id="author" th:field="*{author}" class="form">
+
+    <label for="about">Описание</label>
+    <input type="text" id="about" th:field="*{about}" class="form">
+
+    <label for="price">Стоимость</label>
+    <input type="text" id="price" th:field="*{price}" class="form">
+
+    <input type="submit" value="Подтвердить">
+</form>
+</body>
+</html>
